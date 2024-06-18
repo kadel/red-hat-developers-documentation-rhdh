@@ -2,8 +2,8 @@
 
 = Enabling and disabling TechDocs in {product-short}
 
-The TechDocs plugin is preinstalled and enabled on a {product-short} instance by default. You can disable or enable the TechDocs plugin at any time by configuring the Helm chart.
+The TechDocs plugin is preinstalled and enabled on a {product-short} instance by default. You can disable or enable the TechDocs plugin at any time by configuring the Helm chart or {product} Operator.
 
 .Additional resources
 
-* For more information about enabling and disabling dynamic plugins in Developer Hub, see the _Preinstalled dynamic plugins_ section.
+* For more information about enabling and disabling dynamic plugins in Developer Hub, see the link:{LinkAdminGuide}#rhdh-installing-dynamic-plugins[Installing dynamic plugins] section.

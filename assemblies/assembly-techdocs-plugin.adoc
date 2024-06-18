@@ -16,32 +16,28 @@ The {product} TechDocs plugin helps your organization create, find, and use docu
 //Enabling and disabling the TechDocs plugin
 include::modules/getting-started/proc-techdocs-enable.adoc[leveloffset=+1]
 
-include::modules/dynamic-plugins/con-preinstalled-dynamic-plugins.adoc[leveloffset=+2]
+include::modules/getting-started/ref-techdocs-example-config-plugin-operator.adoc[leveloffset=+2]
+include::modules/getting-started/ref-techdocs-example-config-plugin-helm.adoc[leveloffset=+2]
 
-//Configuring storage
-include::modules/getting-started/con-techdocs-configure-storage.adoc[leveloffset=+1]
-
-include::modules/getting-started/proc-techdocs-using-odf-storage.adoc[leveloffset=+2]
-
-include::modules/getting-started/proc-techdocs-configure-odf-helm.adoc[leveloffset=+2]
-
-include::modules/getting-started/proc-techdocs-configure-odf-operator.adoc[leveloffset=+2]
 
 //Configuring the TechDocs plugin
 include::modules/getting-started/con-techdocs-config-plugin.adoc[leveloffset=+1]
 
-include::modules/dynamic-plugins/con-install-dynamic-plugin-helm.adoc[leveloffset=+2]
+//Configuring storage
+include::modules/getting-started/con-techdocs-configure-storage.adoc[leveloffset=+2]
 
-include::modules/getting-started/ref-techdocs-example-config-plugin-helm.adoc[leveloffset=+3]
+include::modules/getting-started/proc-techdocs-using-odf-storage.adoc[leveloffset=+3]
 
-include::modules/installation/proc-config-dynamic-plugins-rhdh-operator.adoc[leveloffset=+2]
+include::modules/getting-started/proc-techdocs-configure-odf-helm.adoc[leveloffset=+3]
+
+include::modules/getting-started/proc-techdocs-configure-odf-operator.adoc[leveloffset=+3]
 
 
 //Configuring CI/CD
-include::modules/getting-started/con-techdocs-config-cicd.adoc[leveloffset=+1]
+include::modules/getting-started/con-techdocs-config-cicd.adoc[leveloffset=+2]
 
-include::modules/getting-started/proc-techdocs-config-cicd-prep-repo.adoc[leveloffset=+2]
+include::modules/getting-started/proc-techdocs-config-cicd-prep-repo.adoc[leveloffset=+3]
 
-include::modules/getting-started/proc-techdocs-generate-site.adoc[leveloffset=+2]
+include::modules/getting-started/proc-techdocs-generate-site.adoc[leveloffset=+3]
 
-include::modules/getting-started/proc-techdocs-publish-site.adoc[leveloffset=+2]
+include::modules/getting-started/proc-techdocs-publish-site.adoc[leveloffset=+3]
