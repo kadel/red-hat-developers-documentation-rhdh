@@ -9,16 +9,13 @@
 #
 # Resolves AsciiDoc titles into standalone files with all includes inlined
 # and attributes substituted, then converts to GitHub-flavored Markdown.
-#
-# Requirements:
-#   - asciidoctor-reducer  gem install asciidoctor-reducer
-#   - asciidoctor          brew install asciidoctor  (or: gem install asciidoctor)
-#   - pandoc               brew install pandoc       (or: https://pandoc.org/installing.html)
-#   - perl                 (pre-installed on macOS/most Linux)
+# Runs the build inside a container via Podman — no local tool installation needed.
 #
 # Usage:
 #   Run from the repository root:
-#     ./build/scripts/build-resolved.sh
+#     ./build/scripts/build-resolved.sh [--rebuild]
+#
+#   --rebuild  Force rebuild of the container image
 #
 # Input:  titles/*/master.adoc  (each title's entrypoint)
 # Output: titles-resolved/adoc/  (resolved .adoc files)
@@ -26,110 +23,28 @@
 
 set -e
 
-EXCLUDED_TITLES="rhdh-plugins-reference"
-ATTR_FILE="artifacts/attributes.adoc"
-OUTPUT_DIR="titles-resolved"
+IMAGE_NAME="rhdh-docs-build-resolved"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+CONTAINER_DIR="${SCRIPT_DIR}/../containers/build-resolved"
 
-ASCIIDOCTOR_REDUCER="asciidoctor-reducer"
-if ! command -v "${ASCIIDOCTOR_REDUCER}" &> /dev/null; then
-    for candidate in /opt/homebrew/lib/ruby/gems/*/bin/asciidoctor-reducer /opt/homebrew/bin/asciidoctor-reducer; do
-        if [[ -x "$candidate" ]]; then
-            ASCIIDOCTOR_REDUCER="$candidate"
-            break
-        fi
-    done
-    if ! command -v "${ASCIIDOCTOR_REDUCER}" &> /dev/null && [[ ! -x "${ASCIIDOCTOR_REDUCER}" ]]; then
-        echo "Error: asciidoctor-reducer is not installed."
-        echo "Install with: gem install asciidoctor-reducer"
-        exit 1
-    fi
+if ! command -v podman &> /dev/null; then
+    echo "Error: podman is not installed."
+    exit 1
 fi
 
-for cmd in asciidoctor pandoc; do
-    if ! command -v "${cmd}" &> /dev/null; then
-        echo "Error: ${cmd} is not installed."
-        exit 1
-    fi
-done
-
-PERL_HELPER=$(mktemp)
-trap 'rm -f "${PERL_HELPER}"' EXIT
-
-cat > "${PERL_HELPER}" << 'PERL'
-use strict;
-use warnings;
-
-my $attr_file = shift @ARGV;
-my %attrs;
-
-open(my $fh, '<', $attr_file) or die "Cannot open $attr_file: $!\n";
-while (<$fh>) {
-    chomp;
-    next if /^\s*\/\//;
-    if (/^:([a-zA-Z_][a-zA-Z0-9_-]*):\s+(.+)$/) {
-        $attrs{$1} = $2;
-    }
-}
-close($fh);
-
-for my $pass (1..10) {
-    my $changed = 0;
-    for my $name (keys %attrs) {
-        my $old = $attrs{$name};
-        (my $new = $old) =~ s/\{([a-zA-Z_][a-zA-Z0-9_-]*)\}/exists $attrs{$1} ? $attrs{$1} : "{$1}"/ge;
-        if ($new ne $old) {
-            $attrs{$name} = $new;
-            $changed = 1;
-        }
-    }
-    last unless $changed;
-}
-
-while (<STDIN>) {
-    chomp;
-    if (/^:([a-zA-Z_][a-zA-Z0-9_-]*):\s+(.+)$/) {
-        my ($name, $value) = ($1, $2);
-        $value =~ s/\{([a-zA-Z_][a-zA-Z0-9_-]*)\}/exists $attrs{$1} ? $attrs{$1} : "{$1}"/ge;
-        $attrs{$name} = $value;
-    } elsif (/^:!([a-zA-Z_][a-zA-Z0-9_-]*):/) {
-        delete $attrs{$1};
-    }
-    s/\{([a-zA-Z_][a-zA-Z0-9_-]*)\}/exists $attrs{$1} ? $attrs{$1} : "{$1}"/ge;
-    print "$_\n";
-}
-PERL
-
-ADOC_DIR="${OUTPUT_DIR}/adoc"
-MD_DIR="${OUTPUT_DIR}/md"
-
-rm -rf "${OUTPUT_DIR}"
-mkdir -p "${ADOC_DIR}" "${MD_DIR}"
-
-# shellcheck disable=SC2044,SC2013
-for t in $(find titles -name master.adoc | sort -uV | grep -E -v "${EXCLUDED_TITLES}"); do
-    dir=$(dirname "$t")
-    name=${dir#titles/}
-    output="${ADOC_DIR}/${name}.adoc"
-
-    echo -n "Resolving ${name}... "
-    "${ASCIIDOCTOR_REDUCER}" "$t" -o - | perl "${PERL_HELPER}" "${ATTR_FILE}" > "${output}"
-    echo -n "adoc "
-
-    md_output="${MD_DIR}/${name}.md"
-    asciidoctor -b docbook5 "${output}" -o - 2>/dev/null | pandoc -f docbook -t gfm --wrap=none -o "${md_output}" 2>/dev/null || \
-        asciidoctor -b html5 -s "${output}" -o - 2>/dev/null | pandoc -f html -t gfm --wrap=none -o "${md_output}"
-    perl -i -0777 -pe 's/<div[^>]*>\n?//g; s/<\/div>\n?//g; s/\n{3,}/\n\n/g' "${md_output}"
-    echo "-> md"
-done
-
-if [[ -d "images" ]]; then
-    echo "Copying images..."
-    cp -r images/ "${ADOC_DIR}/images/"
-    cp -r images/ "${MD_DIR}/images/"
+if [[ "${1:-}" == "--rebuild" ]]; then
+    echo "Forcing image rebuild..."
+    podman rmi -f "${IMAGE_NAME}" 2>/dev/null || true
+    shift
 fi
 
-adoc_count=$(find "${ADOC_DIR}" -maxdepth 1 -name "*.adoc" | wc -l | tr -d ' ')
-md_count=$(find "${MD_DIR}" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')
-echo ""
-echo "Done: ${adoc_count} AsciiDoc files in ${ADOC_DIR}/"
-echo "      ${md_count} Markdown files in ${MD_DIR}/"
+if ! podman image exists "${IMAGE_NAME}" 2>/dev/null; then
+    echo "Building container image ${IMAGE_NAME}..."
+    podman build -t "${IMAGE_NAME}" "${CONTAINER_DIR}"
+    echo ""
+fi
+
+podman run --rm \
+    -v "${REPO_ROOT}:/workspace:Z" \
+    "${IMAGE_NAME}"

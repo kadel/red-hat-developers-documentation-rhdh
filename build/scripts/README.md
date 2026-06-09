@@ -8,6 +8,7 @@ Build, deploy, and content quality tooling for the RHDH documentation project.
 |---|---|
 | `build-ccutil.sh` | Wrapper that delegates to `build-orchestrator.js`. Used as a fallback in `pr.yml` on older branches and for local builds. |
 | `build-orchestrator.js` | Parallel documentation build orchestrator. Runs ccutil title builds, lychee link validation, and CQA assessment. Produces `build-report.json`. Supports `--no-cqa` and `--no-lychee` flags to skip phases. |
+| `build-resolved.sh` | Resolves AsciiDoc titles into standalone files (all includes inlined, all attributes substituted) and converts them to GitHub-flavored Markdown. Runs inside a container via Podman -- no local tool installation needed. Use `--rebuild` to force a container image rebuild. Output goes to `titles-resolved/adoc/` and `titles-resolved/md/`. See [`../containers/build-resolved/`](../containers/build-resolved/) for the Containerfile and inner build script. |
 | `deploy-gh-pages.sh` | Deploys build output to the `gh-pages` branch. Handles cleanup of stale PR/branch directories, index regeneration with release notes links, and retry with rebase on push conflicts. |
 | `error-patterns.json` | Regex patterns for classifying ccutil build errors into structured messages with cause and fix fields. |
 | `update-cqa-resources.sh` | Fetches upstream Red Hat style guide resources into `.claude/resources/`. |

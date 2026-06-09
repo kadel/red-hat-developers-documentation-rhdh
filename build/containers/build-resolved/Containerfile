@@ -1,0 +1,14 @@
+FROM registry.fedoraproject.org/fedora-minimal:latest
+
+RUN microdnf install -y --nodocs \
+        ruby ruby-devel gcc make redhat-rpm-config \
+        perl-interpreter pandoc findutils \
+    && gem install --no-document asciidoctor asciidoctor-reducer \
+    && microdnf remove -y --noautoremove gcc make ruby-devel redhat-rpm-config \
+    && microdnf clean all
+
+COPY build-resolved.sh /usr/local/bin/build-resolved.sh
+RUN chmod +x /usr/local/bin/build-resolved.sh
+
+WORKDIR /workspace
+ENTRYPOINT ["/usr/local/bin/build-resolved.sh"]
