@@ -24,9 +24,15 @@ Before searching, check if the resolved docs need rebuilding.
 Run this staleness check:
 
 ```bash
+DIR_MTIME=$(date -r titles-resolved/md '+%Y-%m-%dT%H:%M:%S' 2>/dev/null \
+  || date -d @"$(stat -c '%Y' titles-resolved/md)" '+%Y-%m-%dT%H:%M:%S' 2>/dev/null \
+  || echo '1970-01-01')
+
+SOURCES="titles/ assemblies/ modules/ artifacts/attributes.adoc images/"
+
 if [ ! -d titles-resolved/md ] || \
-   [ -n "$(find titles/ assemblies/ modules/ artifacts/attributes.adoc images/ -newer titles-resolved/md -maxdepth 0 2>/dev/null)" ] || \
-   [ -n "$(git log --oneline --since="$(stat -f '%Sm' -t '%Y-%m-%dT%H:%M:%S' titles-resolved/md 2>/dev/null || echo '1970-01-01')" -- titles/ assemblies/ modules/ artifacts/attributes.adoc images/ 2>/dev/null | head -1)" ]; then
+   [ -n "$(find $SOURCES -newer titles-resolved/md -maxdepth 0 2>/dev/null)" ] || \
+   [ -n "$(git log --oneline --since="$DIR_MTIME" -- $SOURCES 2>/dev/null | head -1)" ]; then
     echo "REBUILD_NEEDED"
 else
     echo "UP_TO_DATE"
