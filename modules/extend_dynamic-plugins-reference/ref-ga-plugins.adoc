@@ -1,30 +1,30 @@
 :_mod-docs-content-type: REFERENCE
 
-// This page is generated! Do not edit the .adoc file, but instead run rhdh-supported-plugins.sh to regen this page from the latest plugin metadata.
+// Generated from the catalog index by scripts/generate-dynamic-plugin-tables/src/cli.ts.
 
 [id="ga-plugins_{context}"]
 = {company-name} {generally-available} (GA) plugins
 
 [role="_abstract"]
-{company-name} provides full support for the following 26 dynamic plugins.
+{company-name} provides full support for the following 50 dynamic plugins.
 
-[%header,cols=4*]
+[%header,cols=5*]
 |===
-|*Name* |*Plugin* |*Version* |*Path and required variables*
-|Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-adoption-insights/v/0.8.3[@red-hat-developer-hub/backstage-plugin-adoption-insights]` |0.8.3 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-adoption-insights`
+|*Name* |*Plugin* |*Plugin Version* |*Path and required variables* |*Artifact Tag*
+|Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-adoption-insights/v/1.0.4[@red-hat-developer-hub/backstage-plugin-adoption-insights]` |1.0.4
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-adoption-insights@sha256:a59fb64112e5d7a2e2932a45afb77dd38bea803c108eed97f251dd72757cb48c`
 
+|2.2.0--1.0.4
+|Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-adoption-insights-backend/v/1.0.4[@red-hat-developer-hub/backstage-plugin-adoption-insights-backend]` |1.0.4
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-adoption-insights-backend@sha256:8f4bba2f0cb804b6ddbdfa8ed4647e8fd06ab2b65c863e0f362edd75b5731bfd`
 
-|Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-adoption-insights-backend/v/0.8.3[@red-hat-developer-hub/backstage-plugin-adoption-insights-backend]` |0.8.3 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-adoption-insights-backend-dynamic`
+|2.2.0--1.0.4
+|Analytics Module Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-analytics-module-adoption-insights/v/1.0.4[@red-hat-developer-hub/backstage-plugin-analytics-module-adoption-insights]` |1.0.4
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-analytics-module-adoption-insights@sha256:59747643106678deb327da427e01b6aaa7b7c3df72756f174105246ebdbe1951`
 
-
-|Analytics Module Adoption Insights |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-analytics-module-adoption-insights/v/0.8.3[@red-hat-developer-hub/backstage-plugin-analytics-module-adoption-insights]` |0.8.3 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-analytics-module-adoption-insights-dynamic`
-
-
-|Analytics Provider Segment |`https://npmjs.com/package/@backstage-community/plugin-analytics-provider-segment/v/1.27.0[@backstage-community/plugin-analytics-provider-segment]` |1.27.0 
-|`./dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment`
+|2.2.0--1.0.4
+|Analytics Provider Segment |`https://npmjs.com/package/@backstage-community/plugin-analytics-provider-segment/v/2.0.0[@backstage-community/plugin-analytics-provider-segment]` |2.0.0
+|`oci://quay.io/rhdh/backstage-community-plugin-analytics-provider-segment@sha256:bae57663fe02a099b19a605b6661159c487c11df456e849e08d393625492e5d8`
 
 `BACKSTAGE_VERSION`
 
@@ -34,51 +34,149 @@
 
 `SEGMENT_WRITE_KEY`
 
+|2.2.0--2.0.0
+|App Auth |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-app-auth/v/1.3.0[@red-hat-developer-hub/backstage-plugin-app-auth]` |1.3.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-app-auth@sha256:e88f1d13f5f78bbb275405bd23fe4bd656fe66afcd89db26d169500a3ff1bba6`
 
-|Dynamic Home Page |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-dynamic-home-page/v/1.13.1[@red-hat-developer-hub/backstage-plugin-dynamic-home-page]` |1.13.1 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-dynamic-home-page`
+|2.2.0--1.3.0
+|App Defaults |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-app-defaults/v/1.13.0[@red-hat-developer-hub/backstage-plugin-app-defaults]` |1.13.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-app-defaults@sha256:6469c41d62bc50ead30e5242c821d75e8d22508af30bd3c7e11281a32681ba96`
 
+|2.2.0--1.13.0
+|App Integrations |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-app-integrations/v/1.2.0[@red-hat-developer-hub/backstage-plugin-app-integrations]` |1.2.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-app-integrations@sha256:ac7b72a09f362a8ae6766bc67d61adee0594c5b1b4946b9f6f87a5868789a3aa`
 
-|GitHub Org |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-github-org/v/0.3.23[@backstage/plugin-catalog-backend-module-github-org]` |0.3.23 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-github-org-dynamic`
+|2.2.0--1.2.0
+|Auth Backend Module GitHub Provider |`https://npmjs.com/package/@backstage/plugin-auth-backend-module-github-provider/v/0.5.6[@backstage/plugin-auth-backend-module-github-provider]` |0.5.6
+|`oci://quay.io/rhdh/backstage-plugin-auth-backend-module-github-provider@sha256:5e2d3b8ba91a7cc0e85ab750d6f48c6e05b5ecedd372fc1ec842be350f62ecc7`
+
+`GITHUB_CLIENT_ID`
+
+`GITHUB_CLIENT_SECRET`
+
+|2.2.0--0.5.6
+|Auth Backend Module GitLab Provider |`https://npmjs.com/package/@backstage/plugin-auth-backend-module-gitlab-provider/v/0.4.6[@backstage/plugin-auth-backend-module-gitlab-provider]` |0.4.6
+|`oci://quay.io/rhdh/backstage-plugin-auth-backend-module-gitlab-provider@sha256:97db356d24afe31e369a7509a7d040bef29697eb47f19a49977e9e7aac641207`
+
+`GITLAB_CLIENT_ID`
+
+`GITLAB_CLIENT_SECRET`
+
+|2.2.0--0.4.6
+|Auth Backend Module Guest Provider |`https://npmjs.com/package/@backstage/plugin-auth-backend-module-guest-provider/v/0.2.22[@backstage/plugin-auth-backend-module-guest-provider]` |0.2.22
+|`oci://quay.io/rhdh/backstage-plugin-auth-backend-module-guest-provider@sha256:93e83b88604312e6b89ee3ea945752526d5a5573251d31605628ceee3af87f26`
+
+|2.2.0--0.2.22
+|Auth Backend Module Keycloak Provider |`https://npmjs.com/package/@backstage-community/plugin-auth-backend-module-keycloak-provider/v/0.6.0[@backstage-community/plugin-auth-backend-module-keycloak-provider]` |0.6.0
+|`oci://quay.io/rhdh/backstage-community-plugin-auth-backend-module-keycloak-provider@sha256:ce1adb9aa3c393141eff1a8ba1db9bf6e713622c745cefec8855dd1215b7b566`
+
+`KEYCLOAK_BASE_URL`
+
+`KEYCLOAK_CLIENT_ID`
+
+`KEYCLOAK_CLIENT_SECRET`
+
+`KEYCLOAK_REALM`
+
+|2.2.0--0.6.0
+|Auth Backend Module Microsoft Provider |`https://npmjs.com/package/@backstage/plugin-auth-backend-module-microsoft-provider/v/0.3.18[@backstage/plugin-auth-backend-module-microsoft-provider]` |0.3.18
+|`oci://quay.io/rhdh/backstage-plugin-auth-backend-module-microsoft-provider@sha256:5e249814a8a7fa5f388d9c8a5fc084581fd3951f1098787100acd613376ebdce`
+
+`MICROSOFT_CLIENT_ID`
+
+`MICROSOFT_CLIENT_SECRET`
+
+`MICROSOFT_TENANT_ID`
+
+|2.2.0--0.3.18
+|Auth Backend Module Oidc Provider |`https://npmjs.com/package/@backstage/plugin-auth-backend-module-oidc-provider/v/0.4.20[@backstage/plugin-auth-backend-module-oidc-provider]` |0.4.20
+|`oci://quay.io/rhdh/backstage-plugin-auth-backend-module-oidc-provider@sha256:ad5b0b1f70ad5435b0e031faa4dd8a12dbc0c942c55218452a36f8b88dfdb6ec`
+
+`OIDC_CLIENT_ID`
+
+`OIDC_CLIENT_SECRET`
+
+`OIDC_METADATA_URL`
+
+|2.2.0--0.4.20
+|Auth Backend Module Pingfederate Provider |`https://npmjs.com/package/@backstage-community/plugin-auth-backend-module-pingfederate-provider/v/0.4.0[@backstage-community/plugin-auth-backend-module-pingfederate-provider]` |0.4.0
+|`oci://quay.io/rhdh/backstage-community-plugin-auth-backend-module-pingfederate-provider@sha256:8a430c0ccf6329590927bcad0911ab99ba81f60686268e3956945550c83a8a73`
+
+`PINGFEDERATE_BASE_URL`
+
+`PINGFEDERATE_CLIENT_ID`
+
+`PINGFEDERATE_CLIENT_SECRET`
+
+|2.2.0--0.4.0
+|Bulk Import |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-bulk-import/v/9.1.1[@red-hat-developer-hub/backstage-plugin-bulk-import]` |9.1.1
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-bulk-import@sha256:8c8097ff88e026e9ec07e49e37d51dfe347dde08640a2e576d4662fd38302367`
+
+|2.2.0--9.1.1
+|Bulk Import |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-bulk-import-backend/v/9.1.1[@red-hat-developer-hub/backstage-plugin-bulk-import-backend]` |9.1.1
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-bulk-import-backend@sha256:008994efcc7a862b0324d6a0a139b6954e00af656e1cd2ba93439f9aebbd8741`
+
+|2.2.0--9.1.1
+|GitHub |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-github/v/0.13.5[@backstage/plugin-catalog-backend-module-github]` |0.13.5
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-github@sha256:95c0693b32162ebba81ae0a0e55d0f7b92b2bd20ad6fb063c40fd267e981a16a`
+
+`GITHUB_ORG`
+
+|2.2.0--0.13.5
+|GitHub |`https://npmjs.com/package/@backstage/plugin-scaffolder-backend-module-github/v/0.9.13[@backstage/plugin-scaffolder-backend-module-github]` |0.9.13
+|`oci://quay.io/rhdh/backstage-plugin-scaffolder-backend-module-github@sha256:69f0ef30e773a43632205dbf34c7e5c06a55149e81676d9931a571ef8829889f`
+
+|2.2.0--0.9.13
+|GitHub Org |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-github-org/v/0.3.25[@backstage/plugin-catalog-backend-module-github-org]` |0.3.25
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-github-org@sha256:7ced044f3e2de5dfeb51a582817ce3d95eccbfae5c8231b8fa4263aa377857d7`
 
 `GITHUB_ORG`
 
 `GITHUB_URL`
 
-
-|GitHub |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-github/v/0.13.3[@backstage/plugin-catalog-backend-module-github]` |0.13.3 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-github-dynamic`
-
-`GITHUB_ORG`
-
-
-|GitHub |`https://npmjs.com/package/@backstage/plugin-scaffolder-backend-module-github/v/0.9.10[@backstage/plugin-scaffolder-backend-module-github]` |0.9.10 
-|`./dynamic-plugins/dist/backstage-plugin-scaffolder-backend-module-github-dynamic`
-
-
-|GitLab Org |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-gitlab-org/v/0.2.22[@backstage/plugin-catalog-backend-module-gitlab-org]` |0.2.22 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-gitlab-org-dynamic`
-
-`GITLAB_HOST`
-
-`GITLAB_ORG_GROUP`
-
-
-|GitLab |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-gitlab/v/0.8.4[@backstage/plugin-catalog-backend-module-gitlab]` |0.8.4 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-gitlab-dynamic`
+|2.2.0--0.3.25
+|GitLab |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-gitlab/v/0.8.7[@backstage/plugin-catalog-backend-module-gitlab]` |0.8.7
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-gitlab@sha256:065ea847fcfa47f34999ded9f674ee5ff102ed173e511524aabcceab68e3d8a0`
 
 `GITLAB_DISCOVERY_GROUP`
 
 `GITLAB_HOST`
 
+|2.2.0--0.8.7
+|GitLab Org |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-gitlab-org/v/0.2.24[@backstage/plugin-catalog-backend-module-gitlab-org]` |0.2.24
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-gitlab-org@sha256:7d46687770beb2b2d7d69855381fae8ae8ec9a3aa0ffd7508fb53f0956af8761`
 
-|Global Header |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-global-header/v/1.21.6[@red-hat-developer-hub/backstage-plugin-global-header]` |1.21.6 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-global-header`
+`GITLAB_HOST`
 
+`GITLAB_ORG_GROUP`
 
-|Keycloak |`https://npmjs.com/package/@backstage-community/plugin-catalog-backend-module-keycloak/v/3.19.2[@backstage-community/plugin-catalog-backend-module-keycloak]` |3.19.2 
-|`./dynamic-plugins/dist/backstage-community-plugin-catalog-backend-module-keycloak-dynamic`
+|2.2.0--0.2.24
+|Global Header |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-global-header/v/3.2.1[@red-hat-developer-hub/backstage-plugin-global-header]` |3.2.1
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-global-header@sha256:8c7fe1860871b96a421391ae883e94647c3017041a5a825e91f27fe312c92f3e`
+
+|2.2.0--3.2.1
+|Homepage |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-homepage/v/3.1.0[@red-hat-developer-hub/backstage-plugin-homepage]` |3.1.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-homepage@sha256:fe8fca9a9588cb73bdd4ccab2cb8d04eb2e3f53526c504ac5333a7cbaaba7089`
+
+|2.2.0--3.1.0
+|Homepage |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-homepage-backend/v/0.6.0[@red-hat-developer-hub/backstage-plugin-homepage-backend]` |0.6.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-homepage-backend@sha256:22e64f5adefe393acb3bd2a66408504a93ad69c4a7d2e3108d41cf62a6a8fc18`
+
+|2.2.0--0.6.0
+|Http Request |`https://npmjs.com/package/@roadiehq/scaffolder-backend-module-http-request/v/5.9.0[@roadiehq/scaffolder-backend-module-http-request]` |5.9.0
+|`oci://quay.io/rhdh/roadiehq-scaffolder-backend-module-http-request@sha256:7ec6632f4dbac3a7e7f384774f18863e042527c8b4ee62eec0590de9e1715cdb`
+
+|2.2.0--5.9.0
+|Intelligent Assistant |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-intelligent-assistant/v/5.3.10[@red-hat-developer-hub/backstage-plugin-intelligent-assistant]` |5.3.10
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-intelligent-assistant@sha256:165447d431fdaff0139bcb89fe5ca0d362ffc5fe2ff268de019b84f61f80ec51`
+
+|2.2.0--5.3.10
+|Intelligent Assistant |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-intelligent-assistant-backend/v/5.3.10[@red-hat-developer-hub/backstage-plugin-intelligent-assistant-backend]` |5.3.10
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-intelligent-assistant-backend@sha256:9b93694244220e20c8160538efa0417be51b4693268124c957fcca36f1a311ce`
+
+|2.2.0--5.3.10
+|Keycloak |`https://npmjs.com/package/@backstage-community/plugin-catalog-backend-module-keycloak/v/3.23.1[@backstage-community/plugin-catalog-backend-module-keycloak]` |3.23.1
+|`oci://quay.io/rhdh/backstage-community-plugin-catalog-backend-module-keycloak@sha256:88f26233a35d8a2166e62cfffd270b96366dd5b8cf7cbfcbead57874165504b5`
 
 `KEYCLOAK_BASE_URL`
 
@@ -90,9 +188,13 @@
 
 `KEYCLOAK_REALM`
 
+|2.2.0--3.23.1
+|Kubernetes |`https://npmjs.com/package/@backstage/plugin-kubernetes/v/0.12.22[@backstage/plugin-kubernetes]` |0.12.22
+|`oci://quay.io/rhdh/backstage-plugin-kubernetes@sha256:78f7296bec70b7cafd328722265fd71665c5d8e0aa99b7485d6f904b97ebfb6d`
 
-|Kubernetes |`https://npmjs.com/package/@backstage/plugin-kubernetes-backend/v/0.21.5[@backstage/plugin-kubernetes-backend]` |0.21.5 
-|`./dynamic-plugins/dist/backstage-plugin-kubernetes-backend-dynamic`
+|2.2.0--0.12.22
+|Kubernetes |`https://npmjs.com/package/@backstage/plugin-kubernetes-backend/v/0.21.10[@backstage/plugin-kubernetes-backend]` |0.21.10
+|`oci://quay.io/rhdh/backstage-plugin-kubernetes-backend@sha256:ce83edfa6f7dfd87fde5229b7336c38a3931e6427dded5a2053902e8416159ad`
 
 `K8S_CLUSTER_NAME`
 
@@ -100,13 +202,13 @@
 
 `K8S_CLUSTER_URL`
 
+|2.2.0--0.21.10
+|Kubernetes |`https://npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-kubernetes/v/2.21.0[@backstage-community/plugin-scaffolder-backend-module-kubernetes]` |2.21.0
+|`oci://quay.io/rhdh/backstage-community-plugin-scaffolder-backend-module-kubernetes@sha256:6960b2272ee3ce9bd6cb9e486f2250b3ba2c235c0a90a98f8c88c91e0aa576a3`
 
-|Kubernetes |`https://npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-kubernetes/v/2.17.1[@backstage-community/plugin-scaffolder-backend-module-kubernetes]` |2.17.1 
-|`./dynamic-plugins/dist/backstage-community-plugin-scaffolder-backend-module-kubernetes-dynamic`
-
-
-|Ldap |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-ldap/v/0.12.6[@backstage/plugin-catalog-backend-module-ldap]` |0.12.6 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-ldap-dynamic`
+|2.2.0--2.21.0
+|Ldap |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-ldap/v/0.12.8[@backstage/plugin-catalog-backend-module-ldap]` |0.12.8
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-ldap@sha256:15c8bcabc735ed68ba9ef56e70cc48c53ed6646cb9d02dbd3fba4405c7e95754`
 
 `LDAP_BIND_DN`
 
@@ -118,9 +220,9 @@
 
 `LDAP_USERS_DN`
 
-
-|MS Graph |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-msgraph/v/0.10.3[@backstage/plugin-catalog-backend-module-msgraph]` |0.10.3 
-|`./dynamic-plugins/dist/backstage-plugin-catalog-backend-module-msgraph-dynamic`
+|2.2.0--0.12.8
+|MS Graph |`https://npmjs.com/package/@backstage/plugin-catalog-backend-module-msgraph/v/0.10.5[@backstage/plugin-catalog-backend-module-msgraph]` |0.10.5
+|`oci://quay.io/rhdh/backstage-plugin-catalog-backend-module-msgraph@sha256:9399c01a89022004a81d0efd9ddcf9045bb5af728c0d6dd5c94422f07f0eb926`
 
 `MICROSOFT_CLIENT_ID`
 
@@ -128,47 +230,80 @@
 
 `MICROSOFT_TENANT_ID`
 
+|2.2.0--0.10.5
+|Orchestrator |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-orchestrator/v/6.2.5[@red-hat-developer-hub/backstage-plugin-orchestrator]` |6.2.5
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-orchestrator@sha256:b9136cb39c9ad720d76ae6f890bc4f79747b0c2a4b7b48d3326a37a4ccf74dab`
 
-|Quickstart |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-quickstart/v/1.9.6[@red-hat-developer-hub/backstage-plugin-quickstart]` |1.9.6 
-|`./dynamic-plugins/dist/red-hat-developer-hub-backstage-plugin-quickstart`
+|2.2.0--6.2.5
+|Orchestrator |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-orchestrator-backend/v/8.13.3[@red-hat-developer-hub/backstage-plugin-orchestrator-backend]` |8.13.3
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-orchestrator-backend@sha256:faeca430bfb4069f08dfaa83ab341e4b068ec507533c8cc1d671a4fa91ab7fc7`
 
+|2.2.0--8.13.3
+|Orchestrator |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-scaffolder-backend-module-orchestrator/v/1.8.2[@red-hat-developer-hub/backstage-plugin-scaffolder-backend-module-orchestrator]` |1.8.2
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-scaffolder-backend-module-orchestrator@sha256:aaa08b9e31dd6320dce6f6265a4c2d16cc8617a7cc8d78df4c6a305ce1e605e9`
 
-|RBAC |`https://npmjs.com/package/@backstage-community/plugin-rbac/v/1.55.1[@backstage-community/plugin-rbac]` |1.55.1 
-|`./dynamic-plugins/dist/backstage-community-plugin-rbac`
+|2.2.0--1.8.2
+|Orchestrator Backend Module Loki |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-orchestrator-backend-module-loki/v/1.5.2[@red-hat-developer-hub/backstage-plugin-orchestrator-backend-module-loki]` |1.5.2
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-orchestrator-backend-module-loki@sha256:7b1cd977b130ee9296c34943ef75c22346f7b7b4118278d0a180bcc2c40a9692`
 
+`AUTH_TOKEN`
 
-|Regex |`https://npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-regex/v/2.17.0[@backstage-community/plugin-scaffolder-backend-module-regex]` |2.17.0 
-|`./dynamic-plugins/dist/backstage-community-plugin-scaffolder-backend-module-regex-dynamic`
+`LOKI_BASE_URL`
 
+|2.2.0--1.5.2
+|Orchestrator Form Widgets |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-orchestrator-form-widgets/v/2.2.2[@red-hat-developer-hub/backstage-plugin-orchestrator-form-widgets]` |2.2.2
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-orchestrator-form-widgets@sha256:d10a21694db939715149eee002a194ec430a50fafc9630cf3e59480c23a83ebd`
 
-|Signals |`https://npmjs.com/package/@backstage/plugin-signals-backend/v/0.3.16[@backstage/plugin-signals-backend]` |0.3.16 
-|`./dynamic-plugins/dist/backstage-plugin-signals-backend-dynamic`
+|2.2.0--2.2.2
+|Org |`https://npmjs.com/package/@backstage/plugin-org/v/0.7.8[@backstage/plugin-org]` |0.7.8
+|`oci://quay.io/rhdh/backstage-plugin-org@sha256:abd46846edb0d2ff4e5ac807ae640f8efc6663c496ebdd384344c498f9d9536e`
 
+|2.2.0--0.7.8
+|Quickstart |`https://npmjs.com/package/@red-hat-developer-hub/backstage-plugin-quickstart/v/2.2.0[@red-hat-developer-hub/backstage-plugin-quickstart]` |2.2.0
+|`oci://quay.io/rhdh/red-hat-developer-hub-backstage-plugin-quickstart@sha256:0a66ad7070c8c79953ddec7ab159198a482750be359c8ba5cdd9183667c9cf00`
 
-|Tech Radar |`https://npmjs.com/package/@backstage-community/plugin-tech-radar/v/1.20.0[@backstage-community/plugin-tech-radar]` |1.20.0 
-|`./dynamic-plugins/dist/backstage-community-plugin-tech-radar`
+|2.2.0--2.2.0
+|RBAC |`https://npmjs.com/package/@backstage-community/plugin-rbac/v/2.3.6[@backstage-community/plugin-rbac]` |2.3.6
+|`oci://quay.io/rhdh/backstage-community-plugin-rbac@sha256:71d516bd47744be9e453e096227da015c85a8b78aadd7e54e746b4cadc04f600`
 
+|2.2.0--2.3.6
+|Regex |`https://npmjs.com/package/@backstage-community/plugin-scaffolder-backend-module-regex/v/2.18.0[@backstage-community/plugin-scaffolder-backend-module-regex]` |2.18.0
+|`oci://quay.io/rhdh/backstage-community-plugin-scaffolder-backend-module-regex@sha256:12d32002d05d9d5317c21e32ea6d442ec5f8ddb9176e27ee50d218a6f726e963`
 
-|Tech Radar |`https://npmjs.com/package/@backstage-community/plugin-tech-radar-backend/v/1.19.0[@backstage-community/plugin-tech-radar-backend]` |1.19.0 
-|`./dynamic-plugins/dist/backstage-community-plugin-tech-radar-backend-dynamic`
+|2.2.0--2.18.0
+|Signals |`https://npmjs.com/package/@backstage/plugin-signals/v/0.0.34[@backstage/plugin-signals]` |0.0.34
+|`oci://quay.io/rhdh/backstage-plugin-signals@sha256:b2b85a1e744aa98dfeba8a481f6f7d18d976180f2274d5001cc9c7b810c1e9c6`
+
+|2.2.0--0.0.34
+|Signals |`https://npmjs.com/package/@backstage/plugin-signals-backend/v/0.3.18[@backstage/plugin-signals-backend]` |0.3.18
+|`oci://quay.io/rhdh/backstage-plugin-signals-backend@sha256:ce7aeffc6e8d94acfedd57f6b55d0fd0c85dead8652f90815e7d185771396e47`
+
+|2.2.0--0.3.18
+|Tech Radar |`https://npmjs.com/package/@backstage-community/plugin-tech-radar/v/1.22.0[@backstage-community/plugin-tech-radar]` |1.22.0
+|`oci://quay.io/rhdh/backstage-community-plugin-tech-radar@sha256:4ae723ad226760c9e726ba8e28f6674118fdf3e0bd7c49f45cdde1da459a78bf`
+
+|2.2.0--1.22.0
+|Tech Radar |`https://npmjs.com/package/@backstage-community/plugin-tech-radar-backend/v/1.21.0[@backstage-community/plugin-tech-radar-backend]` |1.21.0
+|`oci://quay.io/rhdh/backstage-community-plugin-tech-radar-backend@sha256:3201a8c5f82e68b6e2cfd95fa147d7251451e28049735fcfc6a94f9fb2af4e79`
 
 `TECH_RADAR_DATA_URL`
 
+|2.2.0--1.21.0
+|TechDocs |`https://npmjs.com/package/@backstage/plugin-techdocs/v/1.18.0[@backstage/plugin-techdocs]` |1.18.0
+|`oci://quay.io/rhdh/backstage-plugin-techdocs@sha256:cfcab12187ae1c591f6f100e80b544837988de3be6b427d552aa83e324fca056`
 
-|TechDocs Module Addons Contrib |`https://npmjs.com/package/@backstage/plugin-techdocs-module-addons-contrib/v/1.1.37[@backstage/plugin-techdocs-module-addons-contrib]` |1.1.37 
-|`./dynamic-plugins/dist/backstage-plugin-techdocs-module-addons-contrib`
+|2.2.0--1.18.0
+|TechDocs |`https://npmjs.com/package/@backstage/plugin-techdocs-backend/v/2.2.5[@backstage/plugin-techdocs-backend]` |2.2.5
+|`oci://quay.io/rhdh/backstage-plugin-techdocs-backend@sha256:42cc50223f6356e89c090b18ac0a1b185c290cfcf276342da7a90f5101e43540`
 
+|2.2.0--2.2.5
+|TechDocs Module Addons Contrib |`https://npmjs.com/package/@backstage/plugin-techdocs-module-addons-contrib/v/1.1.39[@backstage/plugin-techdocs-module-addons-contrib]` |1.1.39
+|`oci://quay.io/rhdh/backstage-plugin-techdocs-module-addons-contrib@sha256:5b70bc17c2d8e24b0f80ea04e02105180257c7df65dfd2bb6efd944ad43ad0a7`
 
-|TechDocs |`https://npmjs.com/package/@backstage/plugin-techdocs/v/1.17.7[@backstage/plugin-techdocs]` |1.17.7 
-|`./dynamic-plugins/dist/backstage-plugin-techdocs`
+|2.2.0--1.1.39
+|Topology |`https://npmjs.com/package/@backstage-community/plugin-topology/v/3.0.7[@backstage-community/plugin-topology]` |3.0.7
+|`oci://quay.io/rhdh/backstage-community-plugin-topology@sha256:dab3c3ce27d3015caec8782fa16a6195e4c1042c33204ce8284ff9e966683190`
 
-
-|TechDocs |`https://npmjs.com/package/@backstage/plugin-techdocs-backend/v/2.2.1[@backstage/plugin-techdocs-backend]` |2.2.1 
-|`./dynamic-plugins/dist/backstage-plugin-techdocs-backend-dynamic`
-
-
-|Topology |`https://npmjs.com/package/@backstage-community/plugin-topology/v/2.15.0[@backstage-community/plugin-topology]` |2.15.0 
-|`./dynamic-plugins/dist/backstage-community-plugin-topology`
-
+|2.2.0--3.0.7
 
 |===
